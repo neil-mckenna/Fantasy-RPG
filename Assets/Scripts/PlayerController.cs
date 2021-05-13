@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     // variables
 
-    
+     public float moveSpeed = 5f;
 
     public Rigidbody2D theRB;
-    public float moveSpeed = 5f;
+    public Animator myAnim;
+
+   
 
 
     // methods
@@ -24,15 +26,23 @@ public class PlayerController : MonoBehaviour
     {
         float delta = Time.deltaTime;
 
-        float xAxis = Input.GetAxisRaw("Horizontal") * delta;
-        float yAxis = Input.GetAxisRaw("Vertical") * delta;
-
-        theRB.velocity = new Vector2(xAxis, yAxis) * moveSpeed;
+        float xAxis = Input.GetAxisRaw("Horizontal");
+        float yAxis = Input.GetAxisRaw("Vertical");
 
         
 
+        theRB.velocity = new Vector2(xAxis, yAxis) * moveSpeed * delta;
 
+        
+        myAnim.SetFloat("moveX", xAxis);
+        myAnim.SetFloat("moveY", yAxis);
 
+        if(xAxis == 1 || xAxis == -1 || yAxis == 1 || yAxis == -1)
+        {
+            Debug.Log("X " + xAxis + " Y " + yAxis);
+            myAnim.SetFloat("lastMoveX", xAxis);
+            myAnim.SetFloat("lastMoveY", yAxis);
+        }
         
 
         
