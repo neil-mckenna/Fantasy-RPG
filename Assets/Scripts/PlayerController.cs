@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
         float xAxis = Input.GetAxisRaw("Horizontal");
         float yAxis = Input.GetAxisRaw("Vertical");
 
-        
-
         theRB.velocity = new Vector2(xAxis, yAxis) * moveSpeed * delta;
 
         
