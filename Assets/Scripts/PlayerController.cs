@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController playerInstance;
 
+    public string areaTransitionName; 
+
    
     // methods
 

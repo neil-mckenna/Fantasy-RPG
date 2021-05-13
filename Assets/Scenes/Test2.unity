@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &150200745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150200747}
+  - component: {fileID: 150200746}
+  m_Layer: 0
+  m_Name: PlayerLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &150200746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150200745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e2f35fddaf14314b9eca3bcbf3efe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 4706016478121183742, guid: 6d406876214b08b25a6f7a3d4bf15a38, type: 3}
+--- !u!4 &150200747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150200745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825430819
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +257,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1490017571, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
+      propertyPath: transitionName
+      value: 2-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490017572, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7596485745728119920, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
       propertyPath: m_Name
       value: Area Exit
@@ -223,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7596485745728119934, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.615413
+      value: -10.47
       objectReference: {fileID: 0}
     - target: {fileID: 7596485745728119934, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -262,8 +314,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7596485745728119935, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
-      propertyPath: areaToLoad
-      value: Test
+      propertyPath: areaTransitionName
+      value: 2-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596485745728119935, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
+      propertyPath: areaTransitionGoToName
+      value: 1-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5ebff7fa9406951894426fdded4de3b, type: 3}
