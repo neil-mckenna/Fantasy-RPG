@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController playerInstance;
 
-    public string areaTransitionName; 
+    public string areaTransitionName;
+    private Vector3 playerBottomLeftLimit;
+    private Vector3 playerTopRightLimit; 
 
    
     // methods
@@ -50,13 +52,23 @@ public class PlayerController : MonoBehaviour
 
         if(xAxis == 1 || xAxis == -1 || yAxis == 1 || yAxis == -1)
         {
-            Debug.Log("X " + xAxis + " Y " + yAxis);
+            //Debug.Log("X " + xAxis + " Y " + yAxis);
             myAnim.SetFloat("lastMoveX", xAxis);
             myAnim.SetFloat("lastMoveY", yAxis);
         }
-        
 
-        
+        // keep the camera inside in the bounds
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, playerBottomLeftLimit.x, playerTopRightLimit.x),
+            Mathf.Clamp(transform.position.y, playerBottomLeftLimit.y, playerTopRightLimit.y),
+            transform.position.z
+        );   
+    }
+
+    public void SetBounds(Vector3 botLeft, Vector3 topRight)
+    {
+        playerBottomLeftLimit = botLeft + new Vector3(0.5f, 1f, 0f);
+        playerTopRightLimit = topRight + new Vector3(-0.5f, -0.5f, 0f);
     }
 
 

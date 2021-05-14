@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     private float halfHeight;
     private float halfWidth;
 
-    public float boundExtraOffset = 0.95f;
+    public float boundExtraOffset = 1f;
 
 
     // Start is called before the first frame update
@@ -28,8 +28,17 @@ public class CameraController : MonoBehaviour
 
         bottomLeftLimit = theMap.localBounds.min;
         topRightLimit = theMap.localBounds.max;
+
+        PlayerController.playerInstance.SetBounds(theMap.localBounds.min, theMap.localBounds.max);
+
+        // this compresses the tilemap to stop excessive missing blank edges after drawing on tilemaps 
+        if(theMap != null)
+        {
+            theMap.CompressBounds();
+        }
+
     }
-    
+
     // Update is called once per frame
     void LateUpdate()
     {
