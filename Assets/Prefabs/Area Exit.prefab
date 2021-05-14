@@ -118,3 +118,4 @@ MonoBehaviour:
   areaToLoad: Test
   areaTransitionGoToName: 
   theEntrance: {fileID: 1490017571}
+  waitToLoad: 1.25
