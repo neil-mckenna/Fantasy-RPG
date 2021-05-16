@@ -24,10 +24,6 @@ public class AreaEntrance : MonoBehaviour
 
         }
 
-        UIFade.instance.FadeFromBlack();
-        
-
-        
     } 
 
 }
