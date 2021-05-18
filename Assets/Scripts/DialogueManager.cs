@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour
                 if(!justStarted)
                 {
                     currentLine++;
+                    CheckIfName();
 
 
                     if(currentLine >= dialogueLines.Length)
@@ -45,6 +46,7 @@ public class DialogueManager : MonoBehaviour
                     }
                     else
                     {
+                        CheckIfName();
                         dialogueText.text = dialogueLines[currentLine];
                     }
 
@@ -59,20 +61,46 @@ public class DialogueManager : MonoBehaviour
         }    
     }
 
-    public void ShowDialogue(string[] newLines)
+    public void ShowDialogue(string[] newLines, bool isPerson)
     {
 
         dialogueLines = newLines;
 
         currentLine = 0;
 
-        dialogueText.text = dialogueLines[0];
+        CheckIfName();
+
+        if(currentLine >= dialogueLines.Length)
+        {
+            return;
+        }
+
+        dialogueText.text = dialogueLines[currentLine];
 
         dialogueBox.SetActive(true);
 
         justStarted = true;
 
+        nameBox.SetActive(isPerson);
+
         PlayerController.playerInstance.canMove = false;
+    }
+
+    public void CheckIfName()
+    {
+        if(currentLine >= dialogueLines.Length)
+        {
+            return;
+        }
+
+        if(dialogueLines[currentLine].StartsWith("n-"))
+        {
+            nameText.text = dialogueLines[currentLine].Replace("n-", "");
+            
+            currentLine++;
+            
+            
+        }
     }
 
 

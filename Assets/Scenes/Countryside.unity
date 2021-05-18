@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557535023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7835913, y: -2.1033309, z: 0}
+  m_LocalPosition: {x: 12.22, y: -5.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -478,9 +478,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hi
-  - My Name is Wendy
-  - Whats your name!
+  - n-Girl
+  - Please help me
+  - n-Player
+  - Is everything ok?
+  - n-Girl
+  - A dragon has just stole me treasure
+  - n-Player
+  - OMFG!
+  - A real dragon
+  - 'what do you want me to do '
 --- !u!1001 &708412570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,6 +708,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 8
       m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1636,6 +1653,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: c60fb5bbd45a60a7b9b349ea424eaba5, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f3331047d9c68cacda66903dd9db1464, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a3e183af27cb8bf7cba5a2d9dabc9949, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 42
     m_Data: {fileID: 21300970, guid: af6bc9dfbb9b08e4890cf8e4b8dd00c3, type: 3}
@@ -1665,8 +1684,10 @@ Tilemap:
     m_Data: {fileID: 21300574, guid: af6bc9dfbb9b08e4890cf8e4b8dd00c3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300572, guid: af6bc9dfbb9b08e4890cf8e4b8dd00c3, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300224, guid: af6bc9dfbb9b08e4890cf8e4b8dd00c3, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 96
+  - m_RefCount: 97
     m_Data:
       e00: 1
       e01: 0
@@ -1685,7 +1706,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 96
+  - m_RefCount: 97
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1739,6 +1760,30 @@ CompositeCollider2D:
         Y: 20000000
       - X: 100000000
         Y: 20000000
+    - - X: 66250051
+        Y: -88
+      - X: 70000081
+        Y: 3124937
+      - X: 70000100
+        Y: 3124978
+      - X: 70000100
+        Y: 10000041
+      - X: 70000041
+        Y: 10000100
+      - X: 59999959
+        Y: 10000100
+      - X: 59999900
+        Y: 10000041
+      - X: 59999900
+        Y: 2499975
+      - X: 59999924
+        Y: 2499931
+      - X: 63749957
+        Y: -91
+      - X: 63749985
+        Y: -100
+      - X: 66250018
+        Y: -100
     - - X: 116250012
         Y: -50000099
       - X: 119999900
@@ -1801,6 +1846,12 @@ CompositeCollider2D:
       - {x: 9.99997, y: 7}
       - {x: -5, y: 6.9999704}
       - {x: -4.999971, y: 2}
+    - - {x: 6.6249924, y: -0.00001}
+      - {x: 7.0000095, y: 0.31251}
+      - {x: 6.9999743, y: 1.00001}
+      - {x: 5.99999, y: 0.9999748}
+      - {x: 6.0000043, y: 0.24998531}
+      - {x: 6.3750067, y: -0.00001}
     - - {x: 11.624999, y: -5.00001}
       - {x: 11.99999, y: -4.9375477}
       - {x: 12.000026, y: -5.00001}
@@ -1930,6 +1981,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060839150}
   m_CullTransparentMesh: 1
+--- !u!1 &1332734252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332734255}
+  - component: {fileID: 1332734254}
+  - component: {fileID: 1332734253}
+  m_Layer: 0
+  m_Name: Sign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1332734253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332734252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c8b9abbc68a9c190f691ef082ea1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Welcome to Town!
+  - Pop 15
+--- !u!61 &1332734254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332734252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.3037383}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3084116, y: 1.6074766}
+  m_EdgeRadius: 0
+--- !u!4 &1332734255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332734252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.49, y: 0.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1395716353
 PrefabInstance:
   m_ObjectHideFlags: 0

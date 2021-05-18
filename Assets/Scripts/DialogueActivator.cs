@@ -8,6 +8,8 @@ public class DialogueActivator : MonoBehaviour
 
     private bool canActivate = false;
 
+    public bool isPerson = true;
+
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.CompareTag("Player"))
@@ -29,7 +31,7 @@ public class DialogueActivator : MonoBehaviour
     {
         if(canActivate && Input.GetButtonDown("Fire1") && !DialogueManager.dialogueInstance.dialogueBox.activeInHierarchy)
         {
-            DialogueManager.dialogueInstance.ShowDialogue(lines);
+            DialogueManager.dialogueInstance.ShowDialogue(lines, isPerson);
 
         }
 
