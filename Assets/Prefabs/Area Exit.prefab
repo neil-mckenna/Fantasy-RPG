@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248ad09d3556bc698a05788b189610dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: 1-1
+  transitionName: Countryside-2
 --- !u!1 &7596485745728119920
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a36ff42a79e1c6884bd91af05ae25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: Test
-  areaTransitionGoToName: 
+  areaToLoad: Town
+  areaTransitionGoToName: Town-1
   theEntrance: {fileID: 1490017571}
-  waitToLoad: 1.25
+  waitToLoad: 2

@@ -6,17 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class AreaExit : MonoBehaviour
 {
-    public string areaToLoad;
-    public string areaTransitionGoToName;
-
-    public AreaEntrance theEntrance;
-
+    public Enums.SceneName SceneToLoad;
+    public Enums.ExitType exitTo;
     private WaitForSeconds waitTime;
     public float waitToLoad = 1f;
 
     private void Start() 
     {
-        theEntrance.transitionName = areaTransitionGoToName;
+        // entrance = new Enums.EntranceType.Town1.ToString();
+        // exitTo = new Enums.ExitType.Town1.ToString();
         waitTime = new WaitForSeconds(waitToLoad);
     }
 
@@ -31,6 +29,9 @@ public class AreaExit : MonoBehaviour
 
     public IEnumerator FadeNLoad()
     {
+        //Disable player movement
+        GameManager.instance.fadingBetweenAreas = true;
+
         // Fade black
         UIFade.instance.FadeToBlack();
 
@@ -38,13 +39,16 @@ public class AreaExit : MonoBehaviour
         yield return waitTime;
 
         // load scene
-        SceneManager.LoadScene(areaToLoad);
+        SceneManager.LoadScene(SceneToLoad.ToString());
 
         // move player to entrance location
-        PlayerController.playerInstance.areaTransitionName = areaTransitionGoToName;
+        PlayerController.playerInstance.areaTransitionName = exitTo.ToString();
 
         // fade back in
         UIFade.instance.FadeFromBlack();
+
+        // Enable player movement
+        GameManager.instance.fadingBetweenAreas = false;
 
     }
 

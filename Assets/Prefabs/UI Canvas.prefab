@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Test Test Test Test Test Test
+  m_Text: '
 
 '
 --- !u!1 &71826631
@@ -2138,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1060839151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4557,12 +4557,7 @@ MonoBehaviour:
   nameText: {fileID: 154840837}
   dialogueBox: {fileID: 1060839150}
   nameBox: {fileID: 1728016462}
-  dialogueLines:
-  - Hello
-  - Goodbye
-  - Meh!
-  - Noobs
-  - Bam
+  dialogueLines: []
   currentLine: 0
 --- !u!114 &1688964363675593495
 MonoBehaviour:

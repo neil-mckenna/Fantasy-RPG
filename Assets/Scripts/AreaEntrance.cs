@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AreaEntrance : MonoBehaviour
 {
-    public string transitionName;
+    public Enums.EntranceType entranceName;
 
     private void Start() 
     {
@@ -13,13 +13,15 @@ public class AreaEntrance : MonoBehaviour
 
         if(PlayerController.playerInstance != null)
         {
-            if(transitionName == PlayerController.playerInstance.areaTransitionName)
+            if(entranceName.ToString() == PlayerController.playerInstance.areaTransitionName)
             {
                 PlayerController.playerInstance.transform.position = transform.position;
+                Debug.Log("Spawned at entrance " + transform.position);
             }
             else
             {
                 defaultStartPos = transform.position;
+                Debug.Log("Spawned at default " + transform.position);
             }
 
         }
