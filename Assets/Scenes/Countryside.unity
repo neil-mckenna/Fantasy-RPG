@@ -488,6 +488,7 @@ MonoBehaviour:
   - OMFG!
   - A real dragon
   - 'what do you want me to do '
+  isPerson: 1
 --- !u!1001 &708412570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,6 +2015,7 @@ MonoBehaviour:
   lines:
   - Welcome to Town!
   - Pop 15
+  isPerson: 0
 --- !u!61 &1332734254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2386,6 +2388,67 @@ RectTransform:
   m_AnchoredPosition: {x: -688.1323, y: 130}
   m_SizeDelta: {x: -1384.105, y: -95.349}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1832449017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832449019}
+  - component: {fileID: 1832449018}
+  m_Layer: 0
+  m_Name: PlayerStat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1832449018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832449017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3bf5bc1ee519103b2a68771e9bfe73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charName: Tim
+  playerLevel: 1
+  currentExp: 250
+  expToNextLevel: 00000000e803000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  maxLevel: 99
+  baseExp: 1000
+  playerExpToLevelModifier: 1.05
+  currentHP: 0
+  maxHP: 100
+  currentMP: 0
+  maximumMP: 30
+  strength: 15
+  defense: 12
+  wpnPower: 0
+  armourPower: 0
+  equippedWpn: 
+  equippedPower: 
+  charImage: {fileID: 7152930139536384079, guid: d650b8c1c4541fee9873c636ce1c5e4c, type: 3}
+--- !u!4 &1832449019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832449017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.719767, y: -0.42923325, z: -0.39046183}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133592817
 GameObject:
   m_ObjectHideFlags: 0
