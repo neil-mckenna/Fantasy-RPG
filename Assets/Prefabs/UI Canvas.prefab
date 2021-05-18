@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 71826634}
   - component: {fileID: 71826633}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 348265244}
   - component: {fileID: 348265245}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Slider-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 389349358}
   - component: {fileID: 389349357}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 433343453}
   - component: {fileID: 433343452}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 450264166}
   - component: {fileID: 450264165}
   m_Layer: 5
-  m_Name: MP
+  m_Name: MP-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 594115087}
   - component: {fileID: 594115086}
   m_Layer: 5
-  m_Name: MP
+  m_Name: MP-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1404,7 +1404,7 @@ GameObject:
   - component: {fileID: 662786521}
   - component: {fileID: 662786520}
   m_Layer: 5
-  m_Name: HP
+  m_Name: HP-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 904598532}
   - component: {fileID: 904598531}
   m_Layer: 5
-  m_Name: Text
+  m_Name: expText-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1885,7 @@ GameObject:
   - component: {fileID: 979413025}
   - component: {fileID: 979413024}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1963,7 +1963,7 @@ GameObject:
   - component: {fileID: 993783403}
   - component: {fileID: 993783404}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Slider-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2054,7 +2054,7 @@ GameObject:
   - component: {fileID: 1023171535}
   - component: {fileID: 1023171534}
   m_Layer: 5
-  m_Name: MP
+  m_Name: MP-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2210,7 +2210,7 @@ GameObject:
   - component: {fileID: 1092500641}
   - component: {fileID: 1092500640}
   m_Layer: 5
-  m_Name: Exp to Next Level
+  m_Name: Exp to Next Level-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2408,7 +2408,7 @@ GameObject:
   - component: {fileID: 1156963560}
   - component: {fileID: 1156963559}
   m_Layer: 5
-  m_Name: Exp to Next Level
+  m_Name: Exp to Next Level-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2525,7 +2525,7 @@ GameObject:
   - component: {fileID: 1254113976}
   - component: {fileID: 1254113975}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2599,7 +2599,7 @@ GameObject:
   - component: {fileID: 1313346851}
   - component: {fileID: 1313346852}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Slider-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2802,7 +2802,7 @@ GameObject:
   - component: {fileID: 1404907364}
   - component: {fileID: 1404907363}
   m_Layer: 5
-  m_Name: Exp to Next Level
+  m_Name: Exp to Next Level-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,7 +2883,7 @@ GameObject:
   - component: {fileID: 1424498466}
   - component: {fileID: 1424498465}
   m_Layer: 5
-  m_Name: HP
+  m_Name: HP-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2962,7 +2962,7 @@ GameObject:
   - component: {fileID: 1470745454}
   - component: {fileID: 1470745453}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3077,7 +3077,7 @@ GameObject:
   - component: {fileID: 1653183815}
   - component: {fileID: 1653183814}
   m_Layer: 5
-  m_Name: Text
+  m_Name: expText-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3298,7 +3298,7 @@ GameObject:
   - component: {fileID: 1706161789}
   - component: {fileID: 1706161788}
   m_Layer: 5
-  m_Name: HP
+  m_Name: HP-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3767,7 +3767,7 @@ GameObject:
   - component: {fileID: 2005928365}
   - component: {fileID: 2005928364}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3846,7 +3846,7 @@ GameObject:
   - component: {fileID: 2011295997}
   - component: {fileID: 2011295996}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4002,7 +4002,7 @@ GameObject:
   - component: {fileID: 2054312813}
   - component: {fileID: 2054312812}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4352,7 +4352,7 @@ GameObject:
   - component: {fileID: 2142621931}
   - component: {fileID: 2142621930}
   m_Layer: 5
-  m_Name: Text
+  m_Name: expText-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4572,6 +4572,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMenu: {fileID: 1352690958}
+  nameText:
+  - {fileID: 433343452}
+  - {fileID: 389349357}
+  - {fileID: 1470745453}
+  hpText:
+  - {fileID: 662786520}
+  - {fileID: 1706161788}
+  - {fileID: 1424498465}
+  mpText:
+  - {fileID: 450264165}
+  - {fileID: 594115086}
+  - {fileID: 1023171534}
+  lvlText:
+  - {fileID: 979413024}
+  - {fileID: 2005928364}
+  - {fileID: 71826633}
+  expText:
+  - {fileID: 1653183814}
+  - {fileID: 904598531}
+  - {fileID: 2142621930}
+  expSlider:
+  - {fileID: 1313346852}
+  - {fileID: 348265245}
+  - {fileID: 993783404}
+  charImage:
+  - {fileID: 2011295996}
+  - {fileID: 1254113975}
+  - {fileID: 2054312812}
+  chatStatHolder:
+  - {fileID: 550474584}
+  - {fileID: 798163462}
+  - {fileID: 1148620202}
 --- !u!1 &6561300018173536999
 GameObject:
   m_ObjectHideFlags: 0
