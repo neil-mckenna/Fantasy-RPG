@@ -19,6 +19,7 @@ public class CharStats : MonoBehaviour
     public int maxHP = 100;
     public int currentMP;
     public int maximumMP = 50;
+    public int[] mpLevelBonus;
     public int strength;
     public int defense;
     public int wpnPower;
@@ -52,6 +53,7 @@ public class CharStats : MonoBehaviour
         }
 
         Debug.LogWarning("currentExp / " + currentExp + "   playerLevel " + playerLevel);
+        Debug.Log("Stats: " + " HP: " + maxHP + " str: " + strength + " def: " + defense);
         
     }
 
@@ -63,9 +65,26 @@ public class CharStats : MonoBehaviour
         {
             if(currentExp > expToNextLevel[playerLevel])
             {
+                // Leveling up
                 currentExp -= expToNextLevel[playerLevel];
                 
                 playerLevel++;
+
+                // determine whether to add str or def based on odd or even
+                if(playerLevel % 2 == 0)
+                {
+                    strength++;
+                }
+                else
+                {
+                    defense++;
+                }
+                
+                maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+                currentHP = maxHP;
+
+                //maximumMP
+
             }
         }
 
