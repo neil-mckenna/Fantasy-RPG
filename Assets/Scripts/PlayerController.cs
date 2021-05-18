@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public string areaTransitionName;
     private Vector3 playerBottomLeftLimit;
-    private Vector3 playerTopRightLimit; 
+    private Vector3 playerTopRightLimit;
+
+    public bool canMove = true;  
 
    
     // methods
@@ -43,22 +45,39 @@ public class PlayerController : MonoBehaviour
 
     private void Update() 
     {
+        
+
         float delta = Time.deltaTime;
 
         float xAxis = Input.GetAxisRaw("Horizontal");
         float yAxis = Input.GetAxisRaw("Vertical");
 
-        theRB.velocity = new Vector2(xAxis, yAxis) * moveSpeed * delta;
+        if(canMove)
+        {
+            theRB.velocity = new Vector2(xAxis, yAxis) * moveSpeed * delta;
+        }
+        else
+        {
+            theRB.velocity = Vector2.zero;
+            
+        }
 
+        if(canMove)
+        {
+            myAnim.SetFloat("moveX", xAxis);
+            myAnim.SetFloat("moveY", yAxis);
+        }
         
-        myAnim.SetFloat("moveX", xAxis);
-        myAnim.SetFloat("moveY", yAxis);
-
         if(xAxis == 1 || xAxis == -1 || yAxis == 1 || yAxis == -1)
         {
-            //Debug.Log("X " + xAxis + " Y " + yAxis);
-            myAnim.SetFloat("lastMoveX", xAxis);
-            myAnim.SetFloat("lastMoveY", yAxis);
+            if(canMove)
+            {
+                //Debug.Log("X " + xAxis + " Y " + yAxis);
+                myAnim.SetFloat("lastMoveX", xAxis);
+                myAnim.SetFloat("lastMoveY", yAxis);
+
+            }
+            
         }
 
         // keep the camera inside in the bounds

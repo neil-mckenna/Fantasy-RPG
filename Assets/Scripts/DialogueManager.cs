@@ -40,6 +40,8 @@ public class DialogueManager : MonoBehaviour
                     {
                         dialogueBox.SetActive(false);
                         currentLine = 0;
+
+                        PlayerController.playerInstance.canMove = true;
                     }
                     else
                     {
@@ -59,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(string[] newLines)
     {
+
         dialogueLines = newLines;
 
         currentLine = 0;
@@ -68,6 +71,8 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
 
         justStarted = true;
+
+        PlayerController.playerInstance.canMove = false;
     }
 
 
