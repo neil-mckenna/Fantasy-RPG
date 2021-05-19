@@ -16,11 +16,20 @@ public class GameMenu : MonoBehaviour
     public Image[] charImage;
     public GameObject[] chatStatHolder;
     public ItemButton[] itemButtons;
+    public string selectedItem;
+    public Item activeItem;
+    public Text itemName, itemDescription, useButtonText;
+
+    public static GameMenu instance;
     
 
     
     private void Start() 
     {
+        instance = this;
+
+
+
         theMenu.SetActive(false);
         
     }
@@ -182,6 +191,25 @@ public class GameMenu : MonoBehaviour
             }
 
         }
+
+    }
+
+    public void SelectItem(Item newItem)
+    {
+        activeItem = newItem;
+
+        if(activeItem.isItem)
+        {
+            useButtonText.text = "Use";
+        }
+
+        if(activeItem.isWeapon || activeItem.isArmor)
+        {
+            useButtonText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
 
     }
 
