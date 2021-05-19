@@ -53,7 +53,7 @@ public class CharStats : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKey(KeyCode.K))
+        if(Input.GetKey(KeyCode.L))
         {
             if(playerLevel < maxLevel)
             {
