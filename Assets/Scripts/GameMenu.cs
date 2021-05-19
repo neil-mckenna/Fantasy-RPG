@@ -213,4 +213,15 @@ public class GameMenu : MonoBehaviour
 
     }
 
+    public void DiscardItem()
+    {
+        if(activeItem != null)
+        {
+            GameManager.instance.RemoveItem(activeItem.itemName);
+
+        }
+
+
+    }
+
 }
