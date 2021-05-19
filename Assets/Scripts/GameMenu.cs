@@ -161,6 +161,7 @@ public class GameMenu : MonoBehaviour
 
     public void ShowItems()
     {
+        GameManager.instance.SortItems();
         
         for(int i = 0; i < itemButtons.Length; i++)
         {
@@ -179,9 +180,8 @@ public class GameMenu : MonoBehaviour
                 itemButtons[i].buttonImage.sprite = null;
                 itemButtons[i].amountText.text = "";        
             }
-            
-        }
 
+        }
 
     }
 
