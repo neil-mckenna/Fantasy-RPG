@@ -25,7 +25,7 @@ public class CharStats : MonoBehaviour
     public int wpnPower;
     public int armourPower;
     public string equippedWpn;
-    public string equippedPower;
+    public string equippedArmor;
     public Sprite charImage;
 
     private void Start() 
