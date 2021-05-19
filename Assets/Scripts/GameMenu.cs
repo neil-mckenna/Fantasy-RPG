@@ -9,18 +9,16 @@ public class GameMenu : MonoBehaviour
     public GameObject[] windows;
     public GameObject[] statusButtons;
     public Text statusName, statusHP, statusMP, statusStrength, statusDefence, statusEquippedWpn, statusWpnPower, statusEquippedArmor, statusArmorPower, statusExpToNextLevel;
-
     public Image statusImage;
-
-
     private CharStats[] playerStats;
-
     [SerializeField] Text[] nameText, hpText, mpText, lvlText, expText;
     public Slider[] expSlider;
     public Image[] charImage;
     public GameObject[] chatStatHolder;
+    public ItemButton[] itemButtons;
     
 
+    
     private void Start() 
     {
         theMenu.SetActive(false);
@@ -158,6 +156,32 @@ public class GameMenu : MonoBehaviour
 
         // character image
         statusImage.sprite = playerStats[selected].charImage;
+
+    }
+
+    public void ShowItems()
+    {
+        
+        for(int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].buttonValue = i;
+
+            if(GameManager.instance.itemsHeld[i] != "")
+            {
+
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                itemButtons[i].amountText.text = GameManager.instance.numOfItems[i].ToString();  
+            }
+            else
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].buttonImage.sprite = null;
+                itemButtons[i].amountText.text = "";        
+            }
+            
+        }
+
 
     }
 

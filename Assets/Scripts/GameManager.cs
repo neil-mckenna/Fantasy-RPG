@@ -8,7 +8,11 @@ public class GameManager : MonoBehaviour
 
     public CharStats[] playerStats;
 
-    public bool gameMenuOpen, dialogueActive, fadingBetweenAreas;    
+    public bool gameMenuOpen, dialogueActive, fadingBetweenAreas;
+    public string[] itemsHeld;
+    public int[] numOfItems;
+    public Item[] referenceItems;
+
 
     private void Awake() 
     {
@@ -27,10 +31,22 @@ public class GameManager : MonoBehaviour
         else
         {
             PlayerController.playerInstance.canMove = true;
+        }  
+    }
+
+    public Item GetItemDetails(string itemToGrab)
+    {
+        for(int i = 0; i < referenceItems.Length; i++)
+        {
+            if(referenceItems[i].itemName == itemToGrab)
+            {
+                Debug.LogWarning("Sucessful: ref id " + referenceItems[i] + "itemName" + referenceItems[i].itemName);
+                return referenceItems[i];
+                
+            }
         }
 
-
-        
+        return null;
     }
 
 

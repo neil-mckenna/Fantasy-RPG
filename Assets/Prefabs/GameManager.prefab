@@ -62,7 +62,7 @@ MonoBehaviour:
   wpnPower: 0
   armourPower: 0
   equippedWpn: 
-  equippedPower: 
+  equippedArmor: 
   charImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
 --- !u!1 &1702811143
 GameObject:
@@ -126,7 +126,7 @@ MonoBehaviour:
   wpnPower: 0
   armourPower: 0
   equippedWpn: 
-  equippedPower: 
+  equippedArmor: 
   charImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
 --- !u!1 &1832449017
 GameObject:
@@ -190,7 +190,7 @@ MonoBehaviour:
   wpnPower: 0
   armourPower: 0
   equippedWpn: 
-  equippedPower: 
+  equippedArmor: 
   charImage: {fileID: 7152930139536384079, guid: d650b8c1c4541fee9873c636ce1c5e4c, type: 3}
 --- !u!1 &888318362335615924
 GameObject:
@@ -242,3 +242,55 @@ MonoBehaviour:
   - {fileID: 1832449018}
   - {fileID: 605362040}
   - {fileID: 1702811144}
+  gameMenuOpen: 0
+  dialogueActive: 0
+  fadingBetweenAreas: 0
+  itemsHeld:
+  - 
+  - 
+  - 
+  - Mana Potion
+  - Health Potion
+  - Broadsword
+  - Iron Armor
+  - Wooden Sword
+  - Leather Armor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  numOfItems: 00000000000000000000000003000000050000000100000001000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  referenceItems:
+  - {fileID: 923342547434431953, guid: bac3425ee10f98ed58115252ddf67ba7, type: 3}
+  - {fileID: 7493251860431504350, guid: 264da5c22bced1c8bb05ab2e7727394f, type: 3}
+  - {fileID: 7302925180774172574, guid: b1692e788e5dff1939769afacb0b0853, type: 3}
+  - {fileID: 8765321342548047060, guid: 1be0cf84e7df1da569cfdfc63e33e806, type: 3}
+  - {fileID: 8522148886766551071, guid: 189661bdf60b2c50285a89fabd71ec09, type: 3}
+  - {fileID: 2535430679781904413, guid: bc3dc6ed1a0ceb5028e80939b57d2edd, type: 3}
