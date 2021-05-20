@@ -11,6 +11,8 @@ public class Shop : MonoBehaviour
 
     public Text goldText;
 
+    public string[] itemsForSale;
+
     // static instance
     public static Shop instance;
 
