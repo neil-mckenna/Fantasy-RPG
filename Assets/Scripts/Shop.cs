@@ -63,6 +63,11 @@ public class Shop : MonoBehaviour
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
 
+        ShowBuyItems();
+    }
+
+    private void ShowBuyItems()
+    {
         for(int i = 0; i < buyItemsButtons.Length; i++)
         {
             buyItemsButtons[i].buttonValue = i;
@@ -86,11 +91,16 @@ public class Shop : MonoBehaviour
 
     public void OpenSellMenu()
     {
-        sellItemsButtons[0].Press();
 
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
 
+        ShowSellItems();
+
+    }
+
+    private void ShowSellItems()
+    {
         GameManager.instance.SortItems();
 
         for(int i = 0; i < sellItemsButtons.Length; i++)
@@ -111,22 +121,102 @@ public class Shop : MonoBehaviour
 
         }
 
+        
     }
 
     public void SelectBuyItem(Item buyItem)
     {
-        selectedItem = buyItem;
-        buyItemName.text = selectedItem.itemName;
-        buyItemDesc.text = selectedItem.description;
-        buyItemValue.text = "Value: " + selectedItem.value.ToString() + "g";
+        if(buyItem != null)
+        {
+            selectedItem = buyItem;
+            buyItemName.text = selectedItem.itemName;
+            buyItemDesc.text = selectedItem.description;
+            buyItemValue.text = "Value: " + selectedItem.value.ToString() + "g";
+
+        }
+        
     }
 
     public void SelectSellItem(Item sellItem)
     {
-        selectedItem = sellItem;
-        sellItemName.text = selectedItem.itemName;
-        sellItemDesc.text = selectedItem.description;
-        sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * 0.6f).ToString() + "g";
+        if(sellItem != null)
+        {
+            
+            selectedItem = sellItem;
+            sellItemName.text = selectedItem.itemName;
+            sellItemDesc.text = selectedItem.description;
+            sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * 0.6f).ToString() + "g";
+
+        }
+    }
+
+    
+
+    public void BuyItem()
+    {
+        if(selectedItem != null)
+        {
+            if(GameManager.instance.currentGold >= selectedItem.value)
+            {
+                GameManager.instance.currentGold -= selectedItem.value;
+                GameManager.instance.AddItem(selectedItem.itemName);
+            }
+
+            goldText.text = GameManager.instance.currentGold.ToString() + "g";
+
+        }
+    }
+
+    public void SellItem()
+    {
+        if(selectedItem != null)
+        {
+            GameManager.instance.currentGold += Mathf.FloorToInt(selectedItem.value * 0.6f);
+            
+            int index = GameManager.instance.FindIndexOfString(selectedItem.itemName);
+            int amountAtIndex = GameManager.instance.numOfItems[index];
+
+            Debug.LogWarning("index location " + index + " item amount " + amountAtIndex);
+            
+            if(amountAtIndex > 0)
+            {
+                GameManager.instance.RemoveItem(selectedItem.itemName);
+            
+                // add selling item to end of shopkeppers array
+                if(itemsForSale.Length <= 40)
+                {
+                    // reverse forloop to pop sold item back into sell list
+                    for(int i = 0; i < itemsForSale.Length; i++)
+                    {
+                        if(itemsForSale[i] == selectedItem.itemName) 
+                        {
+                            Debug.LogWarning("got 1 already thanks"); 
+                            continue; 
+                        }
+                        else if(itemsForSale[i] == "")
+                        {
+                            itemsForSale[i] = selectedItem.itemName;
+                            i = itemsForSale.Length;
+                        }
+
+
+                    }
+                }
+
+                goldText.text = GameManager.instance.currentGold.ToString() + "g";
+
+            }
+            else
+            {
+                
+            }
+            
+        }
+        
+        
+
+        ShowSellItems();
+        
 
     }
 

@@ -4560,7 +4560,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy
+  m_Text: Buy Menu
 --- !u!1 &11787633498542749
 GameObject:
   m_ObjectHideFlags: 0
@@ -6062,6 +6062,7 @@ GameObject:
   - component: {fileID: 5568236023037990691}
   - component: {fileID: 3413121970471081094}
   - component: {fileID: 4535690655699797484}
+  - component: {fileID: 5885352228652214550}
   m_Layer: 5
   m_Name: Gold
   m_TagString: Untagged
@@ -6131,6 +6132,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Gold: '
+--- !u!114 &5885352228652214550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309949498945636572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &343959365724285451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8081,6 +8097,7 @@ GameObject:
   - component: {fileID: 8245544825086984208}
   - component: {fileID: 5167783111739079926}
   - component: {fileID: 2985537330122610975}
+  - component: {fileID: 4738398989242326265}
   m_Layer: 5
   m_Name: Amount
   m_TagString: Untagged
@@ -8128,7 +8145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8775523, g: 0.9150943, b: 0.07338022, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8140,7 +8157,7 @@ MonoBehaviour:
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 10
     m_MaxSize: 72
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8149,6 +8166,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 999999g
+--- !u!114 &4738398989242326265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708494115169763516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &719102645451453867
 GameObject:
   m_ObjectHideFlags: 0
@@ -8377,7 +8409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: Sell Menu
 --- !u!1 &766208722604891113
 GameObject:
   m_ObjectHideFlags: 0
@@ -15865,7 +15897,7 @@ GameObject:
   - component: {fileID: 8908494104363049420}
   - component: {fileID: 6549721591849906516}
   m_Layer: 5
-  m_Name: Sell Button
+  m_Name: Sell Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16820,7 +16852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2139035027816777492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892791822524726857}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2292617660911121746
 GameObject:
   m_ObjectHideFlags: 0
@@ -17486,7 +17530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4491896805292334913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1892791822524726857}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: SellItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2418693043632164647
 GameObject:
   m_ObjectHideFlags: 0
@@ -31732,7 +31788,7 @@ GameObject:
   - component: {fileID: 9124180399102449436}
   - component: {fileID: 9003531292578434688}
   m_Layer: 5
-  m_Name: Buy Button
+  m_Name: Buy Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35603,7 +35659,7 @@ MonoBehaviour:
   shopMenu: {fileID: 9087567535377145953}
   buyMenu: {fileID: 118731564238329927}
   sellMenu: {fileID: 907598974898124228}
-  goldText: {fileID: 4535690655699797484}
+  goldText: {fileID: 2985537330122610975}
   itemsForSale: []
   buyItemsButtons:
   - {fileID: 5000348280970319372}
@@ -49875,7 +49931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16647384, g: 0.6685247, b: 0.8207547, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

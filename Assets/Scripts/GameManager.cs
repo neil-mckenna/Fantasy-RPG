@@ -170,17 +170,29 @@ public class GameManager : MonoBehaviour
             else
             {
                 // the first run check at position 0 then rechecks through correctly because not a nested loop so get a false positive
-                Debug.Log("itemPosition at itemsHeld[i] " + itemPosition + " Couldn't find item " + itemToRemove + " 0 is usally mana potion");
+                
             }
-
-
-
-
         }
 
+    }
 
+    public int FindIndexOfString(string itemName)
+    {
+        int itemPosition = 0;
 
+        for(int i = 0; i < itemsHeld.Length; i++)
+        {
+            if(itemsHeld[i] == itemName)
+            {
+                
+                itemPosition = i;
+                i = itemsHeld.Length;
 
+                return itemPosition;
+            }
+        }
+
+        return 0;
 
     }
 

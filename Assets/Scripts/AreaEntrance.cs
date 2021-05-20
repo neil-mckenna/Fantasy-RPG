@@ -16,12 +16,12 @@ public class AreaEntrance : MonoBehaviour
             if(entranceName.ToString() == PlayerController.playerInstance.areaTransitionName)
             {
                 PlayerController.playerInstance.transform.position = transform.position;
-                Debug.Log("Spawned at entrance " + transform.position);
+                //Debug.Log("Spawned at entrance " + transform.position);
             }
             else
             {
                 defaultStartPos = transform.position;
-                Debug.Log("Spawned at default " + transform.position);
+                //Debug.Log("Spawned at default " + transform.position);
             }
 
         }
