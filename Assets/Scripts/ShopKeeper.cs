@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopKeeper : MonoBehaviour
 {
     private bool canOpen;
-    public string[] itemsForSale;
+    public string[] itemsForSale = new string[40];
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
