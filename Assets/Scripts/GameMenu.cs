@@ -165,7 +165,7 @@ public class GameMenu : MonoBehaviour
             statusEquippedArmor.text = "None";
         }
 
-        statusArmorPower.text = playerStats[selected].armourPower.ToString();
+        statusArmorPower.text = playerStats[selected].armorPower.ToString();
 
         // xp
         statusExpToNextLevel.text = (playerStats[selected].expToNextLevel[playerStats[selected].playerLevel] - playerStats[selected].currentExp).ToString();
@@ -245,6 +245,12 @@ public class GameMenu : MonoBehaviour
     {
         itemCharChoiceMenu.SetActive(false);
 
+    }
+
+    public void UseItem(int selectChar)
+    {
+        activeItem.Use(selectChar);
+        CloseItemCharChoice();
     }
 
 }

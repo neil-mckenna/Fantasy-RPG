@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
         {
             if(itemsHeld[i] == itemToRemove)
             {
+                
                 foundItem = true;
                 itemPosition = i;
                 i = itemsHeld.Length;
@@ -149,6 +150,7 @@ public class GameManager : MonoBehaviour
 
             if(foundItem)
             {
+
                 numOfItems[itemPosition]--;
 
                 if(numOfItems[itemPosition] <= 0)
@@ -157,9 +159,15 @@ public class GameManager : MonoBehaviour
                 }
                 GameMenu.instance.ShowItems();
             }
-            else
+            // ignoring 0 as was mana potion was fine but nothing else would pass without error
+            else if(itemPosition != 0)
             {
                 Debug.LogError("Couldn't find " + itemToRemove);
+            }
+            else
+            {
+                // the first run check at position 0 then rechecks through correctly because not a nested loop so get a false positive
+                Debug.Log("itemPosition at itemsHeld[i] " + itemPosition + " Couldn't find item " + itemToRemove + " 0 is usally mana potion");
             }
 
 

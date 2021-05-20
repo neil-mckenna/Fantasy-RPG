@@ -23,7 +23,7 @@ public class CharStats : MonoBehaviour
     public int strength;
     public int defense;
     public int wpnPower;
-    public int armourPower;
+    public int armorPower;
     public string equippedWpn;
     public string equippedArmor;
     public Sprite charImage;
