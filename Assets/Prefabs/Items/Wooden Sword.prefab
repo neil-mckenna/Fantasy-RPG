@@ -100,7 +100,7 @@ MonoBehaviour:
   isArmor: 0
   itemName: Wooden Sword
   description: A simple practising sword
-  value: 5
+  value: 15
   itemSprite: {fileID: 21300074, guid: 0bc4ed27aef38a44bb72e80f9beb5326, type: 3}
   amountToChange: 0
   affectHP: 0

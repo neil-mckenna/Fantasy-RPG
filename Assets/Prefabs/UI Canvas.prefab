@@ -2162,7 +2162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1060839151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35687,6 +35687,13 @@ MonoBehaviour:
   - {fileID: 8851298550088919566}
   - {fileID: 1731021071889655373}
   - {fileID: 4994418627986185269}
+  selectedItem: {fileID: 0}
+  buyItemName: {fileID: 2291439435094519865}
+  buyItemDesc: {fileID: 387478018459752086}
+  buyItemValue: {fileID: 5315575369921539096}
+  sellItemName: {fileID: 2037783492734403062}
+  sellItemDesc: {fileID: 3369979893255104809}
+  sellItemValue: {fileID: 6018343604142115667}
 --- !u!1 &6561300018173536999
 GameObject:
   m_ObjectHideFlags: 0

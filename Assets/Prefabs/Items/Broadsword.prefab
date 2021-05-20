@@ -100,7 +100,7 @@ MonoBehaviour:
   isArmor: 0
   itemName: Broadsword
   description: A simple effective weapon
-  value: 10
+  value: 50
   itemSprite: {fileID: 21300078, guid: 0bc4ed27aef38a44bb72e80f9beb5326, type: 3}
   amountToChange: 0
   affectHP: 0
