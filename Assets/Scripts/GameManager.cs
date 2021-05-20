@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int[] numOfItems;
     public Item[] referenceItems;
 
+    public int currentGold;
 
     private void Awake() 
     {

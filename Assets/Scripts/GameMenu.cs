@@ -23,6 +23,8 @@ public class GameMenu : MonoBehaviour
     public GameObject itemCharChoiceMenu;
     public Text[] itemCharChoiceNames;
 
+    public Text goldText;
+
     // static instance
     public static GameMenu instance;
     
@@ -80,6 +82,10 @@ public class GameMenu : MonoBehaviour
                 chatStatHolder[i].SetActive(false);
             }
         }
+
+        goldText.text = GameManager.instance.currentGold.ToString() + "g";
+
+
 
     }
 
