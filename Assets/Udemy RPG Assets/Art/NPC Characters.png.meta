@@ -77,6 +77,9 @@ TextureImporter:
   - first:
       213: 8631269386824879595
     second: ShopKeeper
+  - first:
+      213: 6610015202153852503
+    second: NPC Characters_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -193,7 +196,7 @@ TextureImporter:
         x: 82
         y: 50
         width: 12
-        height: 18
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,6 +206,27 @@ TextureImporter:
       bones: []
       spriteID: bed8662e6cd68c770800000000000000
       internalID: 8631269386824879595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Characters_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 51
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75eef441ecd7bbb50800000000000000
+      internalID: 6610015202153852503
       vertices: []
       indices: 
       edges: []

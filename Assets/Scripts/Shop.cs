@@ -208,7 +208,7 @@ public class Shop : MonoBehaviour
             }
             else
             {
-                
+                selectedItem = null;
             }
             
         }
