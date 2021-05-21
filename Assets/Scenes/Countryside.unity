@@ -362,6 +362,9 @@ MonoBehaviour:
   - A real dragon
   - 'what do you want me to do '
   isPerson: 1
+  shouldActivateQuest: 0
+  questToMark: 
+  markComplete: 0
 --- !u!1 &811404880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,6 +1742,9 @@ MonoBehaviour:
   - Welcome to Town!
   - Pop 15
   isPerson: 0
+  shouldActivateQuest: 0
+  questToMark: 
+  markComplete: 0
 --- !u!61 &1332734254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1952,6 +1958,10 @@ PrefabInstance:
       propertyPath: theMap
       value: 
       objectReference: {fileID: 2133592820}
+    - target: {fileID: 3710458205396734055, guid: 02f0303815d71aea4bc21ceda400c7bd, type: 3}
+      propertyPath: musicToPlay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3710458205396734055, guid: 02f0303815d71aea4bc21ceda400c7bd, type: 3}
       propertyPath: boundExtraOffset
       value: 1

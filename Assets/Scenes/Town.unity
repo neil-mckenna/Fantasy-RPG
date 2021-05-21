@@ -25036,6 +25036,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709323568}
     - target: {fileID: 3710458205396734055, guid: 02f0303815d71aea4bc21ceda400c7bd, type: 3}
+      propertyPath: musicToPlay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710458205396734055, guid: 02f0303815d71aea4bc21ceda400c7bd, type: 3}
       propertyPath: boundExtraOffset
       value: 1.1
       objectReference: {fileID: 0}

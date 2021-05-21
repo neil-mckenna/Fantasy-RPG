@@ -54,6 +54,8 @@ public class GameMenu : MonoBehaviour
                 UpdateMainStats();
                 GameManager.instance.gameMenuOpen = true;
             }
+
+            AudioManager.instance.PlaySFX(5);
         }
     }
 
@@ -271,5 +273,10 @@ public class GameMenu : MonoBehaviour
     //     QuestManager.instance.LoadQuestData();
 
     // }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.instance.PlaySFX(4);
+    }
 
 }

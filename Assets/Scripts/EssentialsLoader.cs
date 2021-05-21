@@ -8,6 +8,7 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject UIScreen;
     public GameObject player;
     public GameManager gameManager;
+    public AudioManager audioManager;
 
     private void Start() 
     {
@@ -26,6 +27,11 @@ public class EssentialsLoader : MonoBehaviour
         {
             Instantiate(gameManager);
 
+        }
+
+        if(AudioManager.instance == null)
+        {
+            Instantiate(audioManager);
         }
         
     }

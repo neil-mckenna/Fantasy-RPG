@@ -19,23 +19,6 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            PlaySFX(2);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            
-            PlayBGM(0 + 1);
-
-        }
-        
-    }
-
     public void PlaySFX(int soundToPlay)
     {
         if(soundToPlay < sfx.Length)
@@ -46,12 +29,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(int musicToPlay)
     {
-        StopMusic();
-
-        if(musicToPlay < bgm.Length)
+        if(!bgm[musicToPlay].isPlaying)
         {
-            bgm[musicToPlay].Play();
+            StopMusic();
+
+            if(musicToPlay < bgm.Length)
+            {
+                bgm[musicToPlay].Play();
+            }
+
         }
+
+        
     }
 
     public void StopMusic()

@@ -17,6 +17,9 @@ public class CameraController : MonoBehaviour
 
     public float boundExtraOffset = 1f;
 
+    public int musicToPlay;
+    private bool musicStarted;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +69,12 @@ public class CameraController : MonoBehaviour
                 Mathf.Clamp(transform.position.y, (bottomLeftLimit.y + halfHeight) * boundExtraOffset, (topRightLimit.y - halfHeight) * boundExtraOffset),
                 transform.position.z
             );
+        }
 
+        if(!musicStarted)
+        {
+            musicStarted = true;
+            AudioManager.instance.PlayBGM(musicToPlay);
         }
 
         
