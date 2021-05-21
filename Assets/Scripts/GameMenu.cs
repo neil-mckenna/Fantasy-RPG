@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
+    public string mainMenuName = "MainMenu";
     public GameObject theMenu;
     public GameObject[] windows;
     public GameObject[] statusButtons;
@@ -267,16 +269,22 @@ public class GameMenu : MonoBehaviour
         QuestManager.instance.SaveQuestData();
     }
 
-    // public void LoadGame()
-    // {
-    //     GameManager.instance.LoadData();
-    //     QuestManager.instance.LoadQuestData();
-
-    // }
-
     public void PlayButtonSound()
     {
         AudioManager.instance.PlaySFX(4);
+    }
+
+    public void QuitGame()
+    {
+        Destroy(GameManager.instance.gameObject);
+        Destroy(PlayerController.playerInstance.gameObject);
+        Destroy(AudioManager.instance.gameObject);
+        Destroy(gameObject);
+
+        SceneManager.LoadScene(mainMenuName);
+
+        
+        
     }
 
 }
