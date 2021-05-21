@@ -10,6 +10,8 @@ public class BattleChar : MonoBehaviour
     public string charName;
     public int currentHp, maxHP, currentMP, maximumMP, strength, defense, wpnPower, armorPower;
     public bool hadDied;
+
+    
      
 
 
