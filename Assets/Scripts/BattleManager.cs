@@ -16,6 +16,11 @@ public class BattleManager : MonoBehaviour
 
     public List<BattleChar> activeBattlers = new List<BattleChar>();
 
+    public int currentTurn;
+    public bool turnWaiting;
+
+    public GameObject uiButtonsHolder;
+
 
     // static
     public static BattleManager instance;
@@ -34,6 +39,34 @@ public class BattleManager : MonoBehaviour
         {
             BattleStart(new string[] { "Eyeball", "Spider", "Skeleton" });
         }
+
+        if(battleActive)
+        {
+            if(turnWaiting)
+            {
+                if(activeBattlers[currentTurn].isPlayer)
+                {
+                    uiButtonsHolder.SetActive(true);
+
+                }
+                else
+                {
+                    uiButtonsHolder.SetActive(false);
+
+                    // enemy should attack
+                }
+            }
+
+            if(Input.GetKeyDown(KeyCode.N))
+            {
+                
+                NextTurn();
+
+            }
+
+        }
+
+        
 
 
     }
@@ -84,6 +117,7 @@ public class BattleManager : MonoBehaviour
 
                 }
             }
+            // player forloop end
 
             for(int i = 0; i < enemiesToSpawn.Length; i++)
             {
@@ -109,10 +143,75 @@ public class BattleManager : MonoBehaviour
 
 
             }
+            // enemy forloop end
+            turnWaiting = true;
+            currentTurn = Random.Range(0, activeBattlers.Count);
+
+        }// battle active
+
+    }
+
+    public void NextTurn()
+    {
+        currentTurn++;
+        if(currentTurn >= activeBattlers.Count)
+        {
+            currentTurn = 0;
+        }
+
+        turnWaiting = true;
+
+        UpdateBattle();
+
+    }
+
+    public void UpdateBattle()
+    {
+        bool allEnemiesIsDead = true;
+        bool allPlayersIsDead = true;
+
+        for(int i = 0; i < activeBattlers.Count; i++)
+        {
+            if(activeBattlers[i].currentHp < 0)
+            {
+                activeBattlers[i].currentHp = 0;
+            }
+
+            if(activeBattlers[i].currentHp == 0)
+            {
+                // Handle dead battler
+            }
+            else  
+            {// still alive
+                if(activeBattlers[i].isPlayer)
+                {
+                    allPlayersIsDead = false;
+                }
+                else
+                {
+                    allEnemiesIsDead = false;
+
+                }
+            }
 
         }
 
+        if(allEnemiesIsDead || allPlayersIsDead)
+        {
+            if(allEnemiesIsDead)
+            {
+                // end victory
+            }
+            else
+            {
+                // you dead game over ?
+            }
 
+            battleScene.SetActive(false);
+            GameManager.instance.battleActive = false;
+            battleActive = false;
+
+        }
 
     }
     

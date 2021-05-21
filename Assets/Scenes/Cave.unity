@@ -788,6 +788,9 @@ MonoBehaviour:
   - {fileID: 5622615382006562323, guid: 9e20826eaa634686da2c02ca8e2d4bf3, type: 3}
   - {fileID: 5556447100381903409, guid: ab84c43cf6b2b723ca27323f2ff43faf, type: 3}
   activeBattlers: []
+  currentTurn: 0
+  turnWaiting: 0
+  uiButtonsHolder: {fileID: 2038414379}
 --- !u!1 &294164362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1290,7 @@ GameObject:
   - component: {fileID: 484446329}
   - component: {fileID: 484446328}
   m_Layer: 0
-  m_Name: Battle Canvas
+  m_Name: UI Battle Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11704,7 +11707,7 @@ GameObject:
   - component: {fileID: 2038414381}
   - component: {fileID: 2038414383}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: Menu (UI Canavas Buttons Holder)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
