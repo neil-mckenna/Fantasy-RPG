@@ -9,6 +9,7 @@ public class Enums : MonoBehaviour
         Countryside,
         Town,
         Shop,
+        Cave,
 
 
     }
@@ -24,6 +25,8 @@ public class Enums : MonoBehaviour
         Town4,
         Shop1,
         Shop2,
+        Cave1,
+        Cave2,
 
     }
 
@@ -38,6 +41,8 @@ public class Enums : MonoBehaviour
         Town4,
         Shop1,
         Shop2,
+        Cave1,
+        Cave2,
         
 
     }

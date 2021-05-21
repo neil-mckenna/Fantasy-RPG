@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Countryside.unity
     guid: 7350dc60d64cd71a0b647e97b64b67ee
   - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 0f20ac58b170b9dd1aacf2e10978feae
+  - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: e07df200151e6720d969613641784eae
   - enabled: 1
