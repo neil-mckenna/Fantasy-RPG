@@ -30,13 +30,13 @@ public class QuestManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.O))
         {
-            Debug.LogWarning("O was hit");
+           
             SaveQuestData();
         }
 
         if(Input.GetKeyDown(KeyCode.P))
         {
-            Debug.LogWarning("P was hit");
+            
             LoadQuestData();
         }
         
