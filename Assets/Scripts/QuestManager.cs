@@ -27,6 +27,18 @@ public class QuestManager : MonoBehaviour
             MarkQuestIncomplete("fight the demon");      
 
         }
+
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.LogWarning("O was hit");
+            SaveQuestData();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.LogWarning("P was hit");
+            LoadQuestData();
+        }
         
     }
 
@@ -84,9 +96,48 @@ public class QuestManager : MonoBehaviour
                 questObjects[i].CheckCompletion();
 
             }
+        }
+    }
+
+    public void SaveQuestData()
+    {
+        for(int i = 0; i < questMarkerNames.Length; i++)
+        {
+            if(questMarkerComplete[i])
+            {
+                PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i], 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i], 0);
+            }
 
         }
+        Debug.LogWarning("Saving");
 
+    }
+
+    public void LoadQuestData()
+    {
+        for(int i = 0; i < questMarkerNames.Length; i++)
+        {
+            int valueToSet = 0;
+            if(PlayerPrefs.HasKey("QuestMarker_" + questMarkerNames[i]))
+            {
+                valueToSet = PlayerPrefs.GetInt("QuestMarker_" + questMarkerNames[i]);
+            }
+
+            if(valueToSet == 0)
+            {
+                questMarkerComplete[i] = false;
+            }
+            else
+            {
+                questMarkerComplete[i] = true;
+            }
+
+        }
+        Debug.LogWarning("Loading");
     }
 
 }
