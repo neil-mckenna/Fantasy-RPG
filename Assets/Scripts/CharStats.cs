@@ -93,7 +93,7 @@ public class CharStats : MonoBehaviour
                 maxHP = Mathf.FloorToInt(maxHP * 1.05f);
                 currentHP = maxHP;
 
-                Debug.LogWarning(playerLevel);
+                //Debug.LogWarning(playerLevel);
                 maximumMP = mpLevelBonus[playerLevel - 1];
                 currentMP = maximumMP;
 
