@@ -98,12 +98,12 @@ MonoBehaviour:
   isPlayer: 1
   movesAvaiable: []
   charName: Tim
-  currentHp: 0
-  maxHP: 0
-  currentMP: 0
-  maximumMP: 0
-  strength: 0
-  defense: 0
+  currentHp: 100
+  maxHP: 150
+  currentMP: 25
+  maximumMP: 25
+  strength: 22
+  defense: 16
   wpnPower: 0
   armorPower: 0
   hadDied: 0

@@ -98,12 +98,12 @@ MonoBehaviour:
   isPlayer: 1
   movesAvaiable: []
   charName: Woody
-  currentHp: 0
-  maxHP: 0
-  currentMP: 0
-  maximumMP: 0
-  strength: 0
-  defense: 0
+  currentHp: 100
+  maxHP: 200
+  currentMP: 15
+  maximumMP: 15
+  strength: 20
+  defense: 25
   wpnPower: 0
   armorPower: 0
   hadDied: 0

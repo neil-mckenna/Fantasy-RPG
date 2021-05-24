@@ -54,6 +54,7 @@ public class BattleManager : MonoBehaviour
                     uiButtonsHolder.SetActive(false);
 
                     // enemy should attack
+                    StartCoroutine(EnemyMoveCo());
                 }
             }
 
@@ -213,6 +214,42 @@ public class BattleManager : MonoBehaviour
 
         }
 
+    }
+
+    public IEnumerator EnemyMoveCo()
+    {
+
+        float waitTime = 2f;
+
+        turnWaiting = false;
+
+        yield return new WaitForSeconds(waitTime);
+
+        EnemyAttack();
+
+        yield return new WaitForSeconds(waitTime);
+
+        NextTurn();
+
+    }
+
+    public void EnemyAttack()
+    {
+        List<int> players = new List<int>();
+
+        for(int i = 0; i < activeBattlers.Count; i++)
+        {
+            if(activeBattlers[i].isPlayer && activeBattlers[i].currentHp > 0)
+            {
+                players.Add(i);
+            }
+        }
+
+        int selectedTarget = players[Random.Range(0, players.Count)];
+        Debug.Log(selectedTarget);
+
+        activeBattlers[selectedTarget].currentHp -= 20;
+        
     }
     
 }
