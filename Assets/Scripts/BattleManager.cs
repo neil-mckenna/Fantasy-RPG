@@ -22,6 +22,7 @@ public class BattleManager : MonoBehaviour
     public GameObject uiButtonsHolder;
 
     public BattleMove[] movesList;
+    public GameObject enemyAttackEffect;
 
 
     // static
@@ -257,11 +258,17 @@ public class BattleManager : MonoBehaviour
         {
             if(movesList[i].moveName == activeBattlers[currentTurn].movesAvaiable[selectAttack])
             {
-                Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
+                Instantiate(movesList[i].theEffect, activeBattlers[selectAttack].transform.position, activeBattlers[selectAttack].transform.rotation);
                 movePower = movesList[i].movePower;
 
             }
         }
+
+        if(enemyAttackEffect != null)
+        {
+            Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
+        }
+        
 
         DealDamage(selectAttack, movePower);
  
@@ -275,7 +282,7 @@ public class BattleManager : MonoBehaviour
         float damageCalc = (atkPower / defPower) * movePower * Random.Range(0.9f, 1.1f);
         int damageToGive = Mathf.RoundToInt(damageCalc);
 
-        Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing " + damageCalc + "(" + damageToGive + ") + damage to " + activeBattlers[target].charName);
+        Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing (" + damageToGive + ") + damage to " + activeBattlers[target].charName);
 
         activeBattlers[target].currentHp -= damageToGive;
     }
