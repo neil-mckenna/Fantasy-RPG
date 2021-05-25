@@ -21,6 +21,8 @@ public class BattleManager : MonoBehaviour
 
     public GameObject uiButtonsHolder;
 
+    public BattleMove[] movesList;
+
 
     // static
     public static BattleManager instance;
@@ -246,9 +248,25 @@ public class BattleManager : MonoBehaviour
         }
 
         int selectedTarget = players[Random.Range(0, players.Count)];
-        Debug.Log(selectedTarget);
+        
+        //activeBattlers[selectedTarget].currentHp -= 20;
 
-        activeBattlers[selectedTarget].currentHp -= 20;
+        int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvaiable.Length);
+        
+        for(int i = 0;i < movesList.Length; i++)
+        {
+            if(movesList[i].moveName == activeBattlers[currentTurn].movesAvaiable[selectAttack])
+            {
+                Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
+                
+
+
+            }
+
+
+        }
+
+
         
     }
     

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2102494011384753647}
   - component: {fileID: 2102494011384753646}
   m_Layer: 0
-  m_Name: EyeBall
+  m_Name: Eyeball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  movesAvaiable: []
+  movesAvaiable:
+  - Slash
+  - Fire
   charName: Eyeball
   currentHp: 150
   maxHP: 150
