@@ -1846,6 +1846,7 @@ MonoBehaviour:
   - {fileID: 649725696}
   battleNotice: {fileID: 388766940}
   chanceToFlee: 35
+  gameOverScene: 4
 --- !u!1 &275328411
 GameObject:
   m_ObjectHideFlags: 0

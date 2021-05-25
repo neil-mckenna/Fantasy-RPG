@@ -10,6 +10,10 @@ public class Enums : MonoBehaviour
         Town,
         Shop,
         Cave,
+        Game_Over,
+        MainMenu,
+        LoadingScene,
+
 
 
     }
