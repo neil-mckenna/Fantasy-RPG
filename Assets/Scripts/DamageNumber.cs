@@ -14,7 +14,7 @@ public class DamageNumber : MonoBehaviour
     private void Update() 
     {
         Destroy(gameObject, lifeTime);
-        this.transform.position = new Vector3(0f, moveSpeed * Time.deltaTime, 0f);
+        this.transform.position += new Vector3(0f, moveSpeed * Time.deltaTime * 0.5f , 0f);
         
     }
 
@@ -22,8 +22,8 @@ public class DamageNumber : MonoBehaviour
     {
         damageText.text = damageAmount.ToString();
         this.transform.position += new Vector3(
-            Random.Range(-placementJitter, placementJitter),
-            Random.Range(-placementJitter, placementJitter),
+            Random.Range(-placementJitter * 2, placementJitter * 2),
+            Random.Range(-placementJitter * 2, placementJitter * 2),
             0f);
 
 
