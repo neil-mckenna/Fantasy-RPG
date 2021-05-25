@@ -252,22 +252,33 @@ public class BattleManager : MonoBehaviour
         //activeBattlers[selectedTarget].currentHp -= 20;
 
         int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvaiable.Length);
-        
+        int movePower = 0;
         for(int i = 0;i < movesList.Length; i++)
         {
             if(movesList[i].moveName == activeBattlers[currentTurn].movesAvaiable[selectAttack])
             {
                 Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
-                
-
+                movePower = movesList[i].movePower;
 
             }
-
-
         }
 
-
-        
+        DealDamage(selectAttack, movePower);
+ 
     }
-    
+
+    public void DealDamage(int target, int movePower)
+    {
+        float atkPower = activeBattlers[currentTurn].strength + activeBattlers[currentTurn].wpnPower;
+        float defPower = activeBattlers[target].defense + activeBattlers[target].armorPower;
+
+        float damageCalc = (atkPower / defPower) * movePower * Random.Range(0.9f, 1.1f);
+        int damageToGive = Mathf.RoundToInt(damageCalc);
+
+        Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing " + damageCalc + "(" + damageToGive + ") + damage to " + activeBattlers[target].charName);
+
+        activeBattlers[target].currentHp -= damageToGive;
+    }
+
+
 }
