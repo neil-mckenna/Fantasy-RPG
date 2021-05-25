@@ -37,7 +37,9 @@ public class BattleManager : MonoBehaviour
     public BattleMagicSelect[] magicButtons;
 
     [Header("Battle Notifcations")]
-    public BattleNotification battleNotification;
+    public BattleNotification battleNotice;
+
+    public int chanceToFlee = 35;
 
 
     // static
@@ -450,6 +452,27 @@ public class BattleManager : MonoBehaviour
             }
             
         }
+    }
+
+    public void Flee()
+    {
+        int fleeSuccess = Random.Range(0,100);
+        if(fleeSuccess < chanceToFlee)
+        {
+            // end battle
+            battleActive = false;
+            battleScene.SetActive(false);
+        }
+        else
+        {
+            NextTurn();
+            battleNotice.theText.text = "Couldn't escape!";
+            battleNotice.Activate();
+
+        }
+        
+
+
     }
 
 

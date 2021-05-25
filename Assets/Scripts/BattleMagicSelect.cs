@@ -24,18 +24,12 @@ public class BattleMagicSelect : MonoBehaviour
         }
         else
         {
-            
-
-            BattleManager.instance.battleNotification.theText.text = "Not Enough MP!";
-            BattleManager.instance.battleNotification.Activate();
+        
+            BattleManager.instance.battleNotice.theText.text = "Not Enough MP!";
+            BattleManager.instance.battleNotice.Activate();
             BattleManager.instance.magicMenu.gameObject.SetActive(false);
 
         }
-
-
-        
-
-
 
     }
 }
