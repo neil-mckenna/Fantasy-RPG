@@ -99,12 +99,17 @@ MonoBehaviour:
   movesAvailable:
   - Slash
   charName: Skeleton
-  currentHp: 300
-  maxHP: 300
+  currentHp: 50
+  maxHP: 50
   currentMP: 100
   maximumMP: 100
-  strength: 18
-  defense: 16
+  strength: 10
+  defense: 10
   wpnPower: 0
   armorPower: 0
   hadDied: 0
+  theSprite: {fileID: 1566113247771252067}
+  deadSprite: {fileID: 0}
+  aliveSprite: {fileID: 0}
+  shouldFade: 0
+  fadeSpeed: 3

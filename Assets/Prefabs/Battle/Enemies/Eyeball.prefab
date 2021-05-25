@@ -100,12 +100,17 @@ MonoBehaviour:
   - Slash
   - Fire
   charName: Eyeball
-  currentHp: 150
-  maxHP: 150
+  currentHp: 100
+  maxHP: 100
   currentMP: 0
   maximumMP: 0
-  strength: 20
+  strength: 12
   defense: 8
   wpnPower: 20
   armorPower: 8
   hadDied: 0
+  theSprite: {fileID: 2102494011384753647}
+  deadSprite: {fileID: 0}
+  aliveSprite: {fileID: 0}
+  shouldFade: 0
+  fadeSpeed: 3

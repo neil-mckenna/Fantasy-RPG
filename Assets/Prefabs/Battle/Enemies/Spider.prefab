@@ -100,8 +100,8 @@ MonoBehaviour:
   - Slash
   - Ice
   charName: Spider
-  currentHp: 150
-  maxHP: 150
+  currentHp: 70
+  maxHP: 70
   currentMP: 0
   maximumMP: 0
   strength: 8
@@ -109,3 +109,8 @@ MonoBehaviour:
   wpnPower: 8
   armorPower: 8
   hadDied: 0
+  theSprite: {fileID: 1176373140740631436}
+  deadSprite: {fileID: 0}
+  aliveSprite: {fileID: 0}
+  shouldFade: 0
+  fadeSpeed: 3

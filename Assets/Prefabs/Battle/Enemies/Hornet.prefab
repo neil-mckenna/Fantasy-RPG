@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  movesAvaiable: []
+  movesAvailable: []
   charName: Hornet
   currentHp: 150
   maxHP: 150
@@ -107,3 +107,8 @@ MonoBehaviour:
   wpnPower: 8
   armorPower: 8
   hadDied: 0
+  theSprite: {fileID: 0}
+  deadSprite: {fileID: 0}
+  aliveSprite: {fileID: 0}
+  shouldFade: 0
+  fadeSpeed: 1

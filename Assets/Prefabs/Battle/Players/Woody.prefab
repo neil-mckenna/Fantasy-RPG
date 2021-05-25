@@ -109,3 +109,6 @@ MonoBehaviour:
   wpnPower: 0
   armorPower: 0
   hadDied: 0
+  theSprite: {fileID: 908649567183051594}
+  deadSprite: {fileID: 21300046, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  aliveSprite: {fileID: 21300036, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
