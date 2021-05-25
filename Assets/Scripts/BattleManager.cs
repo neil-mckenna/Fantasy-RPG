@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour
 
     public List<BattleChar> activeBattlers = new List<BattleChar>();
 
-    public int currentTurn;
+    public int currentTurn = 0;
     public bool turnWaiting;
 
     public GameObject uiButtonsHolder;
@@ -84,9 +84,7 @@ public class BattleManager : MonoBehaviour
                 NextTurn();
 
             }
-
         }
-
     }
 
     public void BattleStart(string[] enemiesToSpawn)
@@ -146,20 +144,11 @@ public class BattleManager : MonoBehaviour
                         if(enemyPrefabs[j].charName == enemiesToSpawn[i])
                         {
                             BattleChar newEnemy = Instantiate(enemyPrefabs[j], enemyPositions[i].position, enemyPositions[i].rotation);
-
                             newEnemy.transform.parent = enemyPositions[i];
-
                             activeBattlers.Add(newEnemy);
-
-
-
                         }
-
-
                     }
                 }
-
-
             }
             // enemy forloop end
             turnWaiting = true;
@@ -173,10 +162,14 @@ public class BattleManager : MonoBehaviour
 
     public void NextTurn()
     {
-        currentTurn++;
-        if(currentTurn >= activeBattlers.Count)
+        //Debug.LogWarning("current turn: " + ( currentTurn + 1) + " / " + activeBattlers.Count);
+        if(currentTurn >= activeBattlers.Count - 1)
         {
             currentTurn = 0;
+        }
+        else
+        {
+            currentTurn++;
         }
 
         turnWaiting = true;
@@ -232,53 +225,43 @@ public class BattleManager : MonoBehaviour
         {
             if(allEnemiesIsDead)
             {
-                // end victory
+                StartCoroutine(EndBattleCo());
             }
             else
             {
                 // you dead game over ?
             }
 
-            battleScene.SetActive(false);
-            GameManager.instance.battleActive = false;
-            battleActive = false;
-
         }
         else
         {
-            while(activeBattlers[currentTurn].currentHp == 0)
-            {
-                
-                if(currentTurn >= activeBattlers.Count)
-                {
-                    currentTurn = 0;
-                }
-                else
-                {
-                    currentTurn++;
-                }
-                
+            while(activeBattlers[currentTurn].currentHp <= 0)
+            { 
+                NextTurn();      
             }
         }
-
     }
 
     public IEnumerator EnemyMoveCo()
     {
+        if(activeBattlers[currentTurn].currentHp <= 0 || activeBattlers[currentTurn].hadDied)
+        {
+            NextTurn();
+        }
+        else
+        {
+            float waitTime = 2f;
 
-        float waitTime = 2f;
+            turnWaiting = false;
 
-        turnWaiting = false;
+            yield return new WaitForSeconds(waitTime);
 
-        yield return new WaitForSeconds(waitTime);
+            EnemyAttack();
 
-        EnemyAttack();
+            yield return new WaitForSeconds(waitTime);
 
-        yield return new WaitForSeconds(waitTime);
-
-        NextTurn();
-
-
+            NextTurn();
+        }
     }
 
     public void EnemyAttack()
@@ -317,10 +300,8 @@ public class BattleManager : MonoBehaviour
         {
             Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
         }
-        
 
         DealDamage(selectedTarget, movePower);
- 
     }
 
     public void DealDamage(int target, int movePower)
@@ -330,8 +311,6 @@ public class BattleManager : MonoBehaviour
 
         float damageCalc = (atkPower / defPower) * movePower * Random.Range(0.9f, 1.1f);
         int damageToGive = Mathf.RoundToInt(damageCalc);
-
-        //Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing (" + damageToGive + ") + damage to " + activeBattlers[target].charName);
 
         activeBattlers[target].currentHp -= damageToGive;
 
@@ -360,24 +339,17 @@ public class BattleManager : MonoBehaviour
                 {
                     playerName[i].gameObject.SetActive(false);
                 }
-
             }
             else
             {
                 playerName[i].gameObject.SetActive(false);
 
-
             }
-
         }
-
     }
 
     public void PlayerAttack(string moveName , int selectedTarget)
     {
-
-        //int selectedTarget = 2;
-
         int movePower = 0;
         for(int i = 0;i < movesList.Length; i++)
         {
@@ -399,7 +371,6 @@ public class BattleManager : MonoBehaviour
         targetMenu.SetActive(false);
 
         NextTurn();
-
     }
 
     public void OpenTargetMenu(string moveName)
@@ -430,7 +401,6 @@ public class BattleManager : MonoBehaviour
             {
                 targetButtons[j].gameObject.SetActive(false);
             }
-
         }
     }
 
@@ -447,25 +417,19 @@ public class BattleManager : MonoBehaviour
                 magicButtons[i].spellName = activeBattlers[currentTurn].movesAvailable[i];
                 magicButtons[i].nameText.text = magicButtons[i].spellName;
 
-
                 for(int j = 0; j < movesList.Length; j++)
                 {
                     if(movesList[j].moveName == magicButtons[i].spellName)
                     {
                         magicButtons[i].spellCost = movesList[j].moveCost;
                         magicButtons[i].costText.text = magicButtons[i].spellCost.ToString();
-
                     }
-
-
                 }
-
             }
             else
             {
                 magicButtons[i].gameObject.SetActive(false);
             }
-            
         }
     }
 
@@ -477,18 +441,57 @@ public class BattleManager : MonoBehaviour
             // end battle
             battleActive = false;
             battleScene.SetActive(false);
+            StartCoroutine(EndBattleCo());
         }
         else
         {
             NextTurn();
             battleNotice.theText.text = "Couldn't escape!";
             battleNotice.Activate();
-
         }
-        
-
-
     }
+
+    public IEnumerator EndBattleCo()
+    {
+        battleActive = false;
+        uiButtonsHolder.SetActive(false);
+        targetMenu.SetActive(false);
+        magicMenu.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+
+        UIFade.instance.FadeToBlack();
+
+        yield return new WaitForSeconds(2f);
+
+        for(int i = 0; i < activeBattlers.Count; i++)
+        {
+            if(activeBattlers[i].isPlayer)
+            {
+                for(int j = 0; j < GameManager.instance.playerStats.Length; j++)
+                {
+                    if(activeBattlers[i].charName == GameManager.instance.playerStats[i].charName)
+                    {
+                        GameManager.instance.playerStats[j].currentHP = activeBattlers[i].currentHp;
+                        GameManager.instance.playerStats[j].maximumMP = activeBattlers[i].maximumMP;
+
+                    }
+                }
+            }
+
+            Destroy(activeBattlers[i].gameObject);
+        }
+
+        UIFade.instance.FadeFromBlack();
+        battleScene.SetActive(false);
+        activeBattlers.Clear();
+        currentTurn = 0;
+
+        GameManager.instance.battleActive = false;
+
+        AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay);
+
+    } 
 
 
 }
