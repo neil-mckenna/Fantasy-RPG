@@ -27,6 +27,8 @@ public class BattleManager : MonoBehaviour
     public DamageNumber theDamageNumber;
 
     public Text[] playerName, playerHP, playerMP;
+    public GameObject targetMenu;
+    public BattleTargetButton[] targetButtons;
 
 
     // static
@@ -345,10 +347,10 @@ public class BattleManager : MonoBehaviour
 
     }
 
-    public void PlayerAttack(string moveName /*, int selectedTarget*/)
+    public void PlayerAttack(string moveName , int selectedTarget)
     {
 
-        int selectedTarget = 2;
+        //int selectedTarget = 2;
 
         int movePower = 0;
         for(int i = 0;i < movesList.Length; i++)
@@ -368,8 +370,45 @@ public class BattleManager : MonoBehaviour
         }
 
         uiButtonsHolder.SetActive(false);
+        targetMenu.SetActive(false);
 
         NextTurn();
+
+    }
+
+    public void OpenTargetMenu(string moveName)
+    {
+        targetMenu.SetActive(true);
+        
+        List<int> enemies = new List<int>();
+
+        for(int i = 0; i < activeBattlers.Count; i++)
+        {
+            if(!activeBattlers[i].isPlayer)
+            {
+                enemies.Add(i);
+            }
+        }
+
+        for(int j = 0; j < targetButtons.Length; j++)
+        {
+            if(enemies.Count > j)
+            {
+                targetButtons[j].gameObject.SetActive(true);
+                targetButtons[j].moveName = moveName;
+                targetButtons[j].activeBattlerTarget = enemies[j];
+                targetButtons[j].targetName.text = activeBattlers[enemies[j]].charName;
+
+            }
+            else
+            {
+                targetButtons[j].gameObject.SetActive(false);
+            }
+
+
+
+        }
+
 
 
     }
