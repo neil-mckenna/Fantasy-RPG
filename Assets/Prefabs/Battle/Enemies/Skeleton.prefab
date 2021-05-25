@@ -96,16 +96,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  movesAvaiable:
+  movesAvailable:
   - Slash
-  - Ice
   charName: Skeleton
-  currentHp: 150
-  maxHP: 150
-  currentMP: 0
-  maximumMP: 0
-  strength: 8
-  defense: 8
-  wpnPower: 8
-  armorPower: 8
+  currentHp: 300
+  maxHP: 300
+  currentMP: 100
+  maximumMP: 100
+  strength: 18
+  defense: 16
+  wpnPower: 0
+  armorPower: 0
   hadDied: 0

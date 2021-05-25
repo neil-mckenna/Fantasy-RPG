@@ -96,14 +96,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  movesAvaiable: []
+  movesAvailable:
+  - Plasma
   charName: Tim
   currentHp: 250
   maxHP: 250
-  currentMP: 25
-  maximumMP: 25
-  strength: 22
-  defense: 25
+  currentMP: 100
+  maximumMP: 100
+  strength: 15
+  defense: 12
   wpnPower: 0
   armorPower: 0
   hadDied: 0

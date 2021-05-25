@@ -27,8 +27,17 @@ public class BattleManager : MonoBehaviour
     public DamageNumber theDamageNumber;
 
     public Text[] playerName, playerHP, playerMP;
+    
+    [Header("Normal Attacks")]
     public GameObject targetMenu;
     public BattleTargetButton[] targetButtons;
+
+    [Header("Magic Attacks")]
+    public GameObject magicMenu;
+    public BattleMagicSelect[] magicButtons;
+
+    [Header("Battle Notifcations")]
+    public BattleNotification battleNotification;
 
 
     // static
@@ -268,22 +277,22 @@ public class BattleManager : MonoBehaviour
             if(activeBattlers[i].isPlayer && activeBattlers[i].currentHp > 0)
             {
                 players.Add(i);
+                
             }
         }
 
         int selectedTarget = players[Random.Range(0, players.Count)];
         
-        //activeBattlers[selectedTarget].currentHp -= 20;
-
-        int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvaiable.Length);
+        int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvailable.Length);
         int movePower = 0;
         for(int i = 0;i < movesList.Length; i++)
         {
-            if(movesList[i].moveName == activeBattlers[currentTurn].movesAvaiable[selectAttack])
+            
+            if(movesList[i].moveName == activeBattlers[currentTurn].movesAvailable[selectAttack])
             {
-                Instantiate(movesList[i].theEffect, activeBattlers[selectAttack].transform.position, activeBattlers[selectAttack].transform.rotation);
+                
+                Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
                 movePower = movesList[i].movePower;
-
             }
         }
 
@@ -293,7 +302,7 @@ public class BattleManager : MonoBehaviour
         }
         
 
-        DealDamage(selectAttack, movePower);
+        DealDamage(selectedTarget, movePower);
  
     }
 
@@ -305,7 +314,7 @@ public class BattleManager : MonoBehaviour
         float damageCalc = (atkPower / defPower) * movePower * Random.Range(0.9f, 1.1f);
         int damageToGive = Mathf.RoundToInt(damageCalc);
 
-        Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing (" + damageToGive + ") + damage to " + activeBattlers[target].charName);
+        //Debug.LogWarning(activeBattlers[currentTurn].charName + "is dealing (" + damageToGive + ") + damage to " + activeBattlers[target].charName);
 
         activeBattlers[target].currentHp -= damageToGive;
 
@@ -405,12 +414,42 @@ public class BattleManager : MonoBehaviour
                 targetButtons[j].gameObject.SetActive(false);
             }
 
-
-
         }
+    }
+
+    public void OpenMagicMenu()
+    {
+        magicMenu.SetActive(true);
+
+        for(int i = 0; i < magicButtons.Length; i++)
+        {
+            if(activeBattlers[currentTurn].movesAvailable.Length > i)
+            {                
+                magicButtons[i].gameObject.SetActive(true);
+
+                magicButtons[i].spellName = activeBattlers[currentTurn].movesAvailable[i];
+                magicButtons[i].nameText.text = magicButtons[i].spellName;
 
 
+                for(int j = 0; j < movesList.Length; j++)
+                {
+                    if(movesList[j].moveName == magicButtons[i].spellName)
+                    {
+                        magicButtons[i].spellCost = movesList[j].moveCost;
+                        magicButtons[i].costText.text = magicButtons[i].spellCost.ToString();
 
+                    }
+
+
+                }
+
+            }
+            else
+            {
+                magicButtons[i].gameObject.SetActive(false);
+            }
+            
+        }
     }
 
 

@@ -96,14 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  movesAvaiable: []
+  movesAvailable:
+  - Ice
+  - Fire
   charName: Woody
   currentHp: 300
   maxHP: 300
-  currentMP: 15
-  maximumMP: 15
-  strength: 20
-  defense: 35
+  currentMP: 100
+  maximumMP: 100
+  strength: 18
+  defense: 16
   wpnPower: 0
   armorPower: 0
   hadDied: 0

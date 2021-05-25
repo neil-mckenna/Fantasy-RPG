@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  movesAvaiable:
+  movesAvailable:
   - Slash
   - Fire
   charName: Eyeball
