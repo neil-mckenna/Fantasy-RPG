@@ -220,6 +220,24 @@ public class BattleManager : MonoBehaviour
             battleActive = false;
 
         }
+        else
+        {
+            while(activeBattlers[currentTurn].currentHp == 0)
+            {
+                
+                if(currentTurn >= activeBattlers.Count)
+                {
+                    currentTurn = 0;
+                }
+                else
+                {
+                    currentTurn++;
+                }
+                
+            }
+        }
+
+
 
     }
 
