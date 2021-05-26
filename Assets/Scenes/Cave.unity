@@ -566,6 +566,8 @@ MonoBehaviour:
   timeBetweenBattles: 10
   deactivateAfterStarting: 1
   cannotFlee: 1
+  shouldCompleteQuest: 1
+  questToComplete: fight the demon
 --- !u!61 &35693780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17298,6 +17300,8 @@ MonoBehaviour:
   timeBetweenBattles: 10
   deactivateAfterStarting: 0
   cannotFlee: 0
+  shouldCompleteQuest: 0
+  questToComplete: 
 --- !u!61 &1675829628
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class BattleStarter : MonoBehaviour
     private float betweenBattleCounter;
     public bool deactivateAfterStarting;
     public bool cannotFlee;
+    public bool shouldCompleteQuest;
+    public string questToComplete;
 
     private void Start() 
     {
@@ -94,9 +96,8 @@ public class BattleStarter : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-
-
-
+        BattleReward.instance.markQuestComplete = shouldCompleteQuest;
+        BattleReward.instance.questToMark = questToComplete;
 
 
     }

@@ -101,7 +101,7 @@ MonoBehaviour:
   - Plasma
   - Fire
   charName: Dragon
-  currentHp: 1000
+  currentHp: 10
   maxHP: 1000
   currentMP: 100
   maximumMP: 100
