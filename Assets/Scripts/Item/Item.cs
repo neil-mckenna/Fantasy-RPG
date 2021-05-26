@@ -74,7 +74,7 @@ public class Item : MonoBehaviour
             selectedChar.armorPower = armorStrength;
         }
         
-        Debug.Log("item to be passed " + itemName);
+        //Debug.Log("item to be passed " + itemName);
 
         GameManager.instance.RemoveItem(itemName);
 
