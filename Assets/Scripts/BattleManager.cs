@@ -42,9 +42,11 @@ public class BattleManager : MonoBehaviour
 
     public int chanceToFlee = 35;
     private bool fleeing;
+    public bool cannotFlee;
 
     public int rewardXp;
     public string[] rewardItems;
+
 
     public Enums.SceneName gameOverScene = Enums.SceneName.Game_Over;
 
@@ -64,7 +66,7 @@ public class BattleManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T))
         {
-            BattleStart(new string[] { "Eyeball", "Spider", "Skeleton" });
+            BattleStart(new string[] { "Eyeball", "Spider", "Skeleton" }, false);
         }
 
         if(battleActive)
@@ -94,10 +96,12 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void BattleStart(string[] enemiesToSpawn)
+    public void BattleStart(string[] enemiesToSpawn, bool setCannotFlee)
     {
         if(!battleActive)
         {
+            cannotFlee = setCannotFlee;
+
             battleActive = true;
 
             GameManager.instance.battleActive = true;
@@ -442,21 +446,33 @@ public class BattleManager : MonoBehaviour
 
     public void Flee()
     {
-        int fleeSuccess = Random.Range(0,100);
-        if(fleeSuccess < chanceToFlee)
+        if(cannotFlee)
         {
-            // end battle
-            battleActive = false;
-            battleScene.SetActive(false);
-            fleeing = true;
-            StartCoroutine(EndBattleCo());
+            battleNotice.theText.text = "Can not flee this battle!";
+            battleNotice.Activate();
+
         }
         else
         {
-            NextTurn();
-            battleNotice.theText.text = "Couldn't escape!";
-            battleNotice.Activate();
+            int fleeSuccess = Random.Range(0,100);
+            if(fleeSuccess < chanceToFlee)
+            {
+                // end battle
+                battleActive = false;
+                battleScene.SetActive(false);
+                fleeing = true;
+                StartCoroutine(EndBattleCo());
+            }
+            else
+            {
+                NextTurn();
+                battleNotice.theText.text = "Couldn't escape!";
+                battleNotice.Activate();
+            }
+
         }
+
+        
     }
 
     public IEnumerator EndBattleCo()
